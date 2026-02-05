@@ -1,0 +1,34 @@
+Submodule routers/ravenoc/src contains modified content
+diff --git a/routers/ravenoc/src/src/include/ravenoc_defines.svh b/routers/ravenoc/src/src/include/ravenoc_defines.svh
+index 0378332..1e54bb3 100644
+--- a/routers/ravenoc/src/src/include/ravenoc_defines.svh
++++ b/routers/ravenoc/src/src/include/ravenoc_defines.svh
+@@ -22,11 +22,11 @@
+   `endif                                         // channel
+ 
+   `ifndef NOC_CFG_SZ_ROWS
+-    `define NOC_CFG_SZ_ROWS       2         // NoC size rows
++    `define NOC_CFG_SZ_ROWS       3         // NoC size rows
+   `endif
+ 
+   `ifndef NOC_CFG_SZ_COLS
+-    `define NOC_CFG_SZ_COLS       2         // NoC size cols
++    `define NOC_CFG_SZ_COLS       3         // NoC size cols
+   `endif
+ 
+   `ifndef ROUTING_ALG
+diff --git a/routers/ravenoc/src/src/router/input_datapath.sv b/routers/ravenoc/src/src/router/input_datapath.sv
+index db421a9..4d70e2b 100644
+--- a/routers/ravenoc/src/src/router/input_datapath.sv
++++ b/routers/ravenoc/src/src/router/input_datapath.sv
+@@ -38,8 +38,8 @@ module input_datapath
+   output  s_flit_req_t      fout_req_o,
+   input   s_flit_resp_t     fout_resp_i,
+   // Additional outputs
+-  output                    full_o,
+-  output                    empty_o
++  output logic              full_o,
++  output logic              empty_o
+ );
+   s_flit_req_t  [NumVirtChn-1:0]  from_input_req;
+   s_flit_resp_t [NumVirtChn-1:0]  from_input_resp;

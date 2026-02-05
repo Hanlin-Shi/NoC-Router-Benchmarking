@@ -1,0 +1,10 @@
+[submodule "routers/ravenoc/src"]
+	path = routers/ravenoc/src
+	url = https://github.com/aignacio/ravenoc.git
+[submodule "routers/ranc/src"]
+	path = routers/ranc/src
+	url = https://github.com/UA-RCL/RANC.git
+[submodule "routers/nocrouter/src"]
+	path = routers/nocrouter/src
+	url = https://github.com/agalimberti/NoCRouter.git
+
